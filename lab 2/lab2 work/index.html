@@ -4,24 +4,24 @@
 
 <div id="Country-Objects">
 <h2>The XMLHttpRequest Object</h2>
-<button type="button" onclick="loadDoc()">country by capital city</button>
-<button type="button" onclick="loadDoc()">country by continent</button>
-<button type="button" onclick="loadDoc()">country by costline</button>
+<button type="button" onclick="loadDoc(/country-objects/country-by-capital-city.json)">country by capital city</button>
+<button type="button" onclick="loadDoc(/country-objects/country-by-continent.json)">country by continent</button>
+<button type="button" onclick="loadDoc(/country-objects/country-by-costline.json)">country by costline</button>
 
-<button type="button" onclick="loadDoc()">country by currency name</button>
-<button type="button" onclick="loadDoc()">country by domain tld</button>
-<button type="button" onclick="loadDoc()">country by flag</button>
+<button type="button" onclick="loadDoc(/country-objects/country-by-currency-name.json)">country by currency name</button>
+<button type="button" onclick="loadDoc(/country-objects/country-by-domain-tld.json)">country by domain tld</button>
+<button type="button" onclick="loadDoc(/country-objects/country-by-flag.json)">country by flag</button>
 
 
 
 <script>
-function loadDoc() {
+function loadDoc(file) {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
     document.getElementById("Country-Objects").innerHTML =
     this.responseText;
   }
-  xhttp.open("GET", "country-by-capital-city.json");
+  xhttp.open("GET", file, true);
   xhttp.send();
 }
 </script>
