@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View Multiple Text Files</title>
+</head>
+<body>
+	<h1>View Multiple Text Files</h1>
+	<ul id="file-list"></ul>
+
+	<script>
+		var files = ['country-by-capital.json', 'country-by-continent.json', 'country-by-costline.json'];
+		var fileList = document.getElementById('file-list');
+
+		files.forEach(function(file) {
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					var li = document.createElement('li');
+					li.textContent = xhr.responseText;
+					fileList.appendChild(li);
+				}
+			};
+			xhr.open('GET', file, true);
+			xhr.send();
+		});
+	</script>
+</body>
+</html>
