@@ -14,4 +14,6 @@ http.createServer(function (req, res) {
     res.write(data);
     return res.end();
   }); // you can use 'return' to ensure you stop after the (first) callback
-}).listen(8080); 
+}).listen(8000, ()=>{
+  console.log("node is listening on port 5000" );
+});
