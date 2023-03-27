@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Part 3</title>
+    <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+  </head>
+  <body>
+    <button onclick="displayTable()">Click to view Countries</button>
+    <table id="CountryInfo" style="display:none;">
+      <tr>
+        <th>Country--</th>
+        <th>Continent--</th>
+        <th>Currency name--</th>
+        <th>Internet Domain--</th>
+        <th>Flag</th>
+      </tr>
+      <tr>
+        <td>Ireland</td>
+        <td>Europe</td>
+        <td>EURO</td>
+        <td>.ie</td>
+        <td><i class="flag flag-ireland"></i></td>
+        
+      </tr>
+      <tr>
+        <td>UK</td>
+        <td>Europe</td>
+        <td>Sterling</td>
+        <td>.co.uk</td>
+        <td><i class="flag flag-united-kingdom"></i></td>
+      </tr>
+      <tr>
+        <td>USA</td>
+        <td>North America</td>
+        <td>Dollar</td>
+        <td>.us</td>
+        <td><i class="flag flag-united-states"></i></td>
+      </tr>
+    </table>
+    <script>
+      function displayTable() {
+        var table = document.getElementById("CountryInfo");
+        if (table.style.display === "none") {
+          table.style.display = "table";
+        } else {
+          table.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
