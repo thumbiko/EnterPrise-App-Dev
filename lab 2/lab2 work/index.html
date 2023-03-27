@@ -3,25 +3,25 @@
 <body>
 
 <div id="country-objects">
-<h2>The XMLHttpRequest Object</h2>
-<p>/country-objects/country-by-capital-city.json</p>
-<button type="button" onclick="loadDoc()">country by capital city</button>
-<button type="button" onclick="loadDoc(/country-objects/country-by-continent.json)">country by continent</button>
-<button type="button" onclick="loadDoc(/country-objects/country-by-costline.json)">country by costline</button>
+<h2>Lab2 Part 2</h2>
 
-<button type="button" onclick="loadDoc(/country-objects/country-by-currency-name.json)">country by currency name</button>
-<button type="button" onclick="loadDoc(/country-objects/country-by-domain-tld.json)">country by domain tld</button>
-<button type="button" onclick="loadDoc(/country-objects/country-by-flag.json)">country by flag</button>
+<button type="button" onclick="loadDoc('country-objects/country-by-capital-city.json')">country by capital city</button>
+<button type="button" onclick="loadDoc('country-objects/country-by-continent.json')">country by continent</button>
+<button type="button" onclick="loadDoc('/country-objects/country-by-costline.json')">country by costline</button>
+
+<button type="button" onclick="loadDoc('/country-objects/country-by-currency-name.json')">country by currency name</button>
+<button type="button" onclick="loadDoc('/country-objects/country-by-domain-tld.json')">country by domain tld</button>
+<button type="button" onclick="loadDoc('/country-objects/country-by-flag.json')">country by flag</button>
 
 
 
 <script>
-function loadDoc() {
+function loadDoc(filename) {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
     document.getElementById("country-objects").innerHTML = this.responseText;
   }
-  xhttp.open("GET", 'country-objects/country-by-capital-city.json', true);
+  xhttp.open("GET",filename, true);
   xhttp.send();
 }
 </script>

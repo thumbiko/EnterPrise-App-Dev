@@ -5,9 +5,10 @@ var fs = require('fs');
 http.createServer(function (req, res) {
   var q = url.parse(req.url, true);
   var filename = "./index.html" + q.pathname;
+  
   fs.readFile(filename, function(err, data) {
     if (err) {
-      res.writeHead(404, {'Content-Type': 'text/html'});
+      res.writeHead(404, {'Content-Type': 'application/json'});
       return res.end("404 Not Found");
     }  
     res.writeHead(200, {'Content-Type': 'text/html'});
