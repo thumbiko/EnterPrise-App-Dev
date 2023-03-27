@@ -2,9 +2,10 @@
 <html>
 <body>
 
-<div id="Country-Objects">
+<div id="country-objects">
 <h2>The XMLHttpRequest Object</h2>
-<button type="button" onclick="loadDoc(/country-objects/country-by-capital-city.json)">country by capital city</button>
+<p>/country-objects/country-by-capital-city.json</p>
+<button type="button" onclick="loadDoc()">country by capital city</button>
 <button type="button" onclick="loadDoc(/country-objects/country-by-continent.json)">country by continent</button>
 <button type="button" onclick="loadDoc(/country-objects/country-by-costline.json)">country by costline</button>
 
@@ -15,13 +16,12 @@
 
 
 <script>
-function loadDoc(file) {
+function loadDoc() {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
-    document.getElementById("Country-Objects").innerHTML =
-    this.responseText;
+    document.getElementById("country-objects").innerHTML = this.responseText;
   }
-  xhttp.open("GET", file, true);
+  xhttp.open("GET", 'country-objects/country-by-capital-city.json', true);
   xhttp.send();
 }
 </script>
